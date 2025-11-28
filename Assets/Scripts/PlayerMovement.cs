@@ -17,10 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     // ¡NUEVO! Variable para almacenar la rotación Y del cuerpo
     private float yBodyRotation;
+    private PlayerInventory inventarioScript;
 
+    [HideInInspector] public ItemPickup objetoCercano;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        inventarioScript = GetComponent<PlayerInventory>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -37,7 +40,17 @@ public class PlayerMovement : MonoBehaviour
     {
         lookInput = value.Get<Vector2>();
     }
-
+    public void OnInventory(InputValue value)
+    {
+        // Solo actuamos cuando se presiona el botón (isPressed), no al soltarlo
+        if (value.isPressed)
+        {
+            if (inventarioScript != null)
+            {
+                inventarioScript.ToggleInventory();
+            }
+        }
+    }
     void LateUpdate()
     {
         // --- Lógica de Mirada (Cámara Vertical) ---

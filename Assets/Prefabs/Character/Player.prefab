@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 294349743132938401}
   - component: {fileID: 3264812947363251920}
   - component: {fileID: 6376776636316184742}
+  - component: {fileID: 8547145594066203022}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -189,6 +190,30 @@ MonoBehaviour:
   moveSpeed: 5
   playerCamera: {fileID: 6344825385566774645}
   lookSensitivity: 15
+  objetoCercano: {fileID: 0}
+--- !u!114 &8547145594066203022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368708113604326260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a4963965d6b1e4ab444c8dc5ab65a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  items: []
+  capacidadMaxima: 10
+  inventarioUI: {fileID: 0}
+  slotsParent: {fileID: 0}
+  mensajeRecoger: {fileID: 0}
+  panelInspeccion: {fileID: 0}
+  nombreObjetoTexto: {fileID: 0}
+  puntoInspeccion: {fileID: 0}
+  velocidadRotacion: 20
+  tamanoVisual: 0.5
+  objetoCercano: {fileID: 0}
 --- !u!1 &8189322771440435465
 GameObject:
   m_ObjectHideFlags: 0
