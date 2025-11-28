@@ -37,6 +37,8 @@ public class FinalizarNivel : MonoBehaviour
     {
         if (textoEnPantalla != null)
         {
+            textoEnPantalla.gameObject.SetActive(true);
+
             textoEnPantalla.text = mensaje;
             StopAllCoroutines();
             StartCoroutine(BorrarTextoDespuesDe(3f));
@@ -46,7 +48,12 @@ public class FinalizarNivel : MonoBehaviour
     IEnumerator BorrarTextoDespuesDe(float tiempo)
     {
         yield return new WaitForSeconds(tiempo);
-        if (textoEnPantalla != null) textoEnPantalla.text = "";
+        if (textoEnPantalla != null)
+        {
+            textoEnPantalla.text = "";
+
+            textoEnPantalla.gameObject.SetActive(false);
+        }
     }
 
     void CargarEscena()
